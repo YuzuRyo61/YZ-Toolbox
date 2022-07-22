@@ -1,0 +1,11 @@
+.dashboard-block {
+  @apply bg-base-200 rounded-box shadow-xl p-4 m-2;
+}
+
+.dashboard-block .dashboard-name {
+  @apply text-2xl font-extrabold;
+}
+
+.dashboard-block .dashboard-value {
+  @apply text-sm;
+}

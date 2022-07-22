@@ -18,6 +18,7 @@ import {
   SimpleTauri,
   SimpleGit,
 } from '@ng-icons/simple-icons';
+import {SysInfoService} from "./service/sys-info.service";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import {
         HeroExclamationCircle,
       })
   ],
-  providers: [],
+  providers: [
+    SysInfoService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

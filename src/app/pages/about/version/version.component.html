@@ -3,17 +3,16 @@
     <h1 class="font-bold text-3xl">{{ name | async }}</h1>
     <h2 class="font-semibold text-xl">v{{ version }}</h2>
     <div class="my-2">
-      <span class="mx-1"><ng-icon name="simple-angular"></ng-icon> Angular: {{ angularVersion }}</span>
-      <span class="mx-1"><ng-icon name="simple-tauri"></ng-icon> Tauri: {{ tauriVersion | async }}</span>
+      <span class="mx-1"><ng-icon name="simple-angular" class="mr-1"></ng-icon>Angular: {{ angularVersion }}</span>
+      <span class="mx-1"><ng-icon name="simple-tauri" class="mr-1"></ng-icon>Tauri: {{ tauriVersion | async }}</span>
     </div>
     <div>
       <a class="btn btn-outline btn-info mx-1" [href]="repositoryUrl" target="_blank"><ng-icon name="simple-git" class="mr-2"></ng-icon>Repository</a>
       <a class="btn btn-outline btn-warning mx-1" [href]="repositoryFeedback" target="_blank"><ng-icon name="hero-exclamation-circle" class="mr-2"></ng-icon>Feedback</a>
     </div>
     <div class="text-xs mt-4">
-      <p>Git Logo by <a href="https://twitter.com/jasonlong" target="_blank" class="underline">Jason Long</a> is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" class="underline">Creative Commons Attribution 3.0 Unported License</a>.</p>
-      <p>Tauri Logo is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" class="underline">CC-BY-NC-ND</a></p>
+      <p>Git Logo by <a href="https://twitter.com/jasonlong" target="_blank" class="link">Jason Long</a> is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" class="link">Creative Commons Attribution 3.0 Unported License</a>.</p>
+      <p>Tauri Logo is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" class="link">CC-BY-NC-ND</a></p>
     </div>
   </div>
 </div>
-
