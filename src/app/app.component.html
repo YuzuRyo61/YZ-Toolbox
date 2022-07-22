@@ -21,12 +21,21 @@
   </div>
   <div class="drawer-side">
     <label for="drawer-menu" class="drawer-overlay"></label>
-    <div class="overflow-y-auto w-80 bg-base-100 text-base-content">
+    <div class="overflow-y-auto w-80 bg-base-100 text-base-content flex flex-col">
       <h1 class="p-4 text-center hidden lg:block text-2xl font-bold">YZ-Toolbox</h1>
       <ul class="menu p-4">
-        <li><a (click)="drawerMenu = false" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-        <li><a (click)="drawerMenu = false" routerLink="/url" routerLinkActive="active">URL Tools</a></li>
+        <li><a (click)="drawerMenu = false" routerLink="/dashboard" routerLinkActive="active"><ng-icon name="hero-home"></ng-icon> Dashboard</a></li>
+        <li><a (click)="drawerMenu = false" routerLink="/url" routerLinkActive="active"><ng-icon name="hero-link"></ng-icon> URL Tools</a></li>
       </ul>
+      <div class="mt-auto">
+        <div class="divider m-0"></div>
+        <div class="block lg:flex">
+          <ul class="menu p-4 lg:p-2 lg:menu-horizontal lg:ml-auto">
+            <li class="lg:tooltip" data-tip="Settings"><a (click)="drawerMenu = false" routerLink="/settings" routerLinkActive="active"><ng-icon name="hero-cog"></ng-icon><span class="block lg:hidden"> Settings</span></a></li>
+            <li class="lg:tooltip" data-tip="About"><a (click)="drawerMenu = false" routerLink="/about" routerLinkActive="active"><ng-icon name="hero-information-circle"></ng-icon><span class="block lg:hidden"> About</span></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
