@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { getName } from '@tauri-apps/api/app';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   drawerMenu = false;
+  name = getName();
 }

@@ -1,15 +1,27 @@
 {
   "name": "yz-toolbox",
   "version": "0.0.0",
+  "author": {
+    "name": "YuzuRyo61",
+    "url": "https://yuzuryo61.me/",
+    "email": "yuzuryo61@yuzulia.work"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YuzuRyo61/YZ-Toolbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YuzuRyo61/YZ-Toolbox/issues"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:angular": "ng serve",
     "build": "tauri build",
     "build:angular": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "tauri": "tauri",
-    "start:tauri": "tauri dev"
+    "start": "tauri dev"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +44,7 @@
     "@angular/compiler-cli": "^14.1.0",
     "@ng-icons/core": "^19.0.0",
     "@ng-icons/heroicons": "^19.0.0",
+    "@ng-icons/simple-icons": "^19.0.0",
     "@tailwindcss/typography": "^0.5.4",
     "@tauri-apps/cli": "^1.0.4",
     "@types/jasmine": "~4.0.0",

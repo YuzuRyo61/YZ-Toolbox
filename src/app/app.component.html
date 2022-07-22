@@ -4,25 +4,25 @@
     <div class="navbar bg-base-200 lg:hidden">
       <div class="navbar-start">
         <label tabindex="0" class="btn btn-ghost btn-circle drawer-button" for="drawer-menu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+          <ng-icon name="hero-menu"></ng-icon>
         </label>
       </div>
       <div class="navbar-center">
-        <a class="btn btn-ghost text-xl">YZ-Toolbox</a>
+        <p class="text-xl">{{ name | async }}</p>
       </div>
       <div class="navbar-end">
 
       </div>
     </div>
     <!-- Page content here -->
-    <div>
+    <div class="p-2">
       <router-outlet></router-outlet>
     </div>
   </div>
   <div class="drawer-side">
     <label for="drawer-menu" class="drawer-overlay"></label>
     <div class="overflow-y-auto w-80 bg-base-100 text-base-content flex flex-col">
-      <h1 class="p-4 text-center hidden lg:block text-2xl font-bold">YZ-Toolbox</h1>
+      <h1 class="p-4 text-center hidden lg:block text-2xl font-bold">{{ name | async }}</h1>
       <ul class="menu p-4">
         <li><a (click)="drawerMenu = false" routerLink="/dashboard" routerLinkActive="active"><ng-icon name="hero-home"></ng-icon> Dashboard</a></li>
         <li><a (click)="drawerMenu = false" routerLink="/url" routerLinkActive="active"><ng-icon name="hero-link"></ng-icon> URL Tools</a></li>

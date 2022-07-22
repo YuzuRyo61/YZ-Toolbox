@@ -1,14 +1,14 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "npm run build",
-    "beforeDevCommand": "npm run start",
+    "beforeBuildCommand": "npm run build:angular",
+    "beforeDevCommand": "npm run start:angular",
     "devPath": "http://localhost:4200",
     "distDir": "../dist/yz-toolbox"
   },
   "package": {
-    "productName": "yz-toolbox",
-    "version": "0.1.0"
+    "productName": "YZ-Toolbox",
+    "version": "0.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -17,7 +17,7 @@
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
-      "copyright": "",
+      "copyright": "(C) 2022 YuzuRyo61",
       "deb": {
         "depends": []
       },
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "work.yuzulia.ti.yz-toolbox",
       "longDescription": "",
       "macOS": {
         "entitlements": null,

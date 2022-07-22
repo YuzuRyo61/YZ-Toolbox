@@ -9,8 +9,15 @@ import {
   HeroHome,
   HeroLink,
   HeroInformationCircle,
-  HeroCog
+  HeroCog,
+  HeroMenu,
+  HeroExclamationCircle,
 } from '@ng-icons/heroicons/outline';
+import {
+  SimpleAngular,
+  SimpleTauri,
+  SimpleGit,
+} from '@ng-icons/simple-icons';
 
 @NgModule({
   declarations: [
@@ -25,6 +32,11 @@ import {
         HeroLink,
         HeroInformationCircle,
         HeroCog,
+        SimpleAngular,
+        SimpleTauri,
+        HeroMenu,
+        SimpleGit,
+        HeroExclamationCircle,
       })
   ],
   providers: [],
