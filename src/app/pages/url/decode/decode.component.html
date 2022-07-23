@@ -1,0 +1,35 @@
+<div class="flex flex-col w-full lg:flex-row">
+  <div class="grid flex-grow">
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Decode From</span>
+      </label>
+      <textarea class="textarea textarea-bordered h-64" placeholder="Decode from ..." [(ngModel)]="text"></textarea>
+    </div>
+    <div class="form-control">
+      <label class="label cursor-pointer">
+        <span class="label-text">Decode symbols</span>
+        <input type="checkbox" checked="checked" class="checkbox" [(ngModel)]="component" />
+      </label>
+    </div>
+  </div>
+  <div class="divider lg:divider-horizontal">To</div>
+  <div class="form-control grid flex-grow">
+    <label class="label">
+      <span class="label-text">Decode To</span>
+    </label>
+    <textarea
+      class="textarea textarea-bordered h-64"
+      (click)="copyToClipboard(text)"
+      readonly
+      [class.textarea-success]="copiedClipboard"
+      (blur)="copiedClipboard = false"
+    >{{ decode(text) }}</textarea>
+    <label class="label">
+      <span class="label-text-alt">
+        <ng-container *ngIf="copiedClipboard; else clipDescription">Copied!</ng-container>
+        <ng-template #clipDescription>Click to copy to clipboard</ng-template>
+      </span>
+    </label>
+  </div>
+</div>
