@@ -12,6 +12,11 @@ import {
   HeroCog,
   HeroMenu,
   HeroExclamationCircle,
+  HeroChip,
+  HeroDesktopComputer,
+  HeroServer,
+  HeroIdentification,
+  HeroArrowCircleUp,
 } from '@ng-icons/heroicons/outline';
 import {
   SimpleAngular,
@@ -38,6 +43,11 @@ import {SysInfoService} from "./service/sys-info.service";
         HeroMenu,
         SimpleGit,
         HeroExclamationCircle,
+        HeroChip,
+        HeroDesktopComputer,
+        HeroServer,
+        HeroIdentification,
+        HeroArrowCircleUp,
       })
   ],
   providers: [

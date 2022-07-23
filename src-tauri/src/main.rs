@@ -21,7 +21,7 @@ fn main() {
 struct DashboardData {
     cpu_brand: String,
     total_memory: u64,
-    os_name: Option<String>,
+    os: String,
     hostname: Option<String>,
 }
 
@@ -29,6 +29,7 @@ struct DashboardData {
 struct DashboardUsage {
     cpu: f32,
     memory: f32,
+    uptime: u64,
 }
 
 #[tauri::command]
@@ -37,7 +38,11 @@ fn get_dashboard_data() -> DashboardData {
     DashboardData {
         cpu_brand: sys.global_cpu_info().brand().to_string(),
         total_memory: sys.total_memory(),
-        os_name: sys.long_os_version(),
+        os: format!(
+            "{} {}",
+            sys.name().unwrap_or(String::from("<Unknown>")),
+            sys.os_version().unwrap_or(String::from("<Unknown>")),
+        ),
         hostname: sys.host_name(),
     }
 }
@@ -52,5 +57,6 @@ fn get_dashboard_usage() -> DashboardUsage {
     DashboardUsage {
         cpu: sys.global_cpu_info().cpu_usage(),
         memory: sys.used_memory() as f32 / sys.total_memory() as f32 * 100.0,
+        uptime: sys.uptime(),
     }
 }

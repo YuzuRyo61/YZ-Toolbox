@@ -1,31 +1,69 @@
 <div class="grid grid-cols-1 lg:grid-cols-2">
   <div class="dashboard-block">
-    <h2 class="dashboard-name">CPU</h2>
+    <h2 class="dashboard-name"><ng-icon name="hero-chip" class="mr-1"></ng-icon>CPU</h2>
     <p class="dashboard-value">{{ data?.cpu_brand }}</p>
   </div>
   <div class="dashboard-block">
-    <h2 class="dashboard-name">Memory</h2>
+    <h2 class="dashboard-name"><ng-icon name="hero-server" class="mr-1"></ng-icon> Memory</h2>
     <p class="dashboard-value">{{ data?.total_memory | number }}KB</p>
   </div>
   <div class="dashboard-block">
-    <h2 class="dashboard-name">OS</h2>
-    <p class="dashboard-value">{{ data?.os_name }}</p>
+    <h2 class="dashboard-name"><ng-icon name="hero-desktop-computer" class="mr-1"></ng-icon> OS</h2>
+    <p class="dashboard-value">{{ data?.os }}</p>
   </div>
   <div class="dashboard-block">
-    <h2 class="dashboard-name">Hostname</h2>
+    <h2 class="dashboard-name"><ng-icon name="hero-identification" class="mr-1"></ng-icon>Hostname</h2>
     <p class="dashboard-value">{{ data?.hostname }}</p>
+  </div>
+</div>
+
+<div class="dashboard-block m-4">
+  <div class="flex justify-center text-center">
+    <div class="mx-2">
+      <p class="mb-2"><ng-icon name="hero-chip" class="mr-1"></ng-icon>CPU Usage</p>
+      <div class="radial-progress" style="--value:{{ usage?.cpu | number : '1.0-0' }};"
+           [class.text-error]="usage && usage.cpu >= 80">{{ usage?.cpu | number : '1.0-0' }}%
+      </div>
+    </div>
+    <div class="mx-2">
+      <p class="mb-2"><ng-icon name="hero-server" class="mr-1"></ng-icon>Memory Usage</p>
+      <div class="radial-progress" style="--value:{{ usage?.memory | number : '1.0-0' }};"
+           [class.text-error]="usage && usage.memory >= 80">{{ usage?.memory | number : '1.0-0' }}%
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="dashboard-block">
   <div class="flex justify-center text-center">
-    <div class="mx-2">
-      <p class="mb-2">CPU Usage</p>
-      <div class="radial-progress" style="--value:{{ usage?.cpu | number : '1.0-0' }};" [class.text-error]="usage && usage.cpu >= 80">{{ usage?.cpu | number : '1.0-0' }}%</div>
-    </div>
-    <div class="mx-2">
-      <p class="mb-2">Memory Usage</p>
-      <div class="radial-progress" style="--value:{{ usage?.memory | number : '1.0-0' }};" [class.text-error]="usage && usage.memory >= 80">{{ usage?.memory | number : '1.0-0' }}%</div>
+    <div *ngIf="usage">
+      <h1 class="text-2xl mb-4"><ng-icon name="hero-arrow-circle-up" class="mr-1"></ng-icon>Uptime</h1>
+      <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+        <div class="flex flex-col">
+          <span class="countdown font-mono text-5xl">
+            <span style="--value:{{ mathFloor(usage.uptime / 86400) }};"></span>
+          </span>
+          days
+        </div>
+        <div class="flex flex-col">
+          <span class="countdown font-mono text-5xl">
+            <span style="--value:{{ mathFloor(usage.uptime / 3600 % 24) }};"></span>
+          </span>
+          hours
+        </div>
+        <div class="flex flex-col">
+          <span class="countdown font-mono text-5xl">
+            <span style="--value:{{ mathFloor(usage.uptime / 60 % 60) }};"></span>
+          </span>
+          min
+        </div>
+        <div class="flex flex-col">
+          <span class="countdown font-mono text-5xl">
+            <span style="--value:{{ mathFloor(usage.uptime % 60) }};"></span>
+          </span>
+          sec
+        </div>
+      </div>
     </div>
   </div>
 </div>

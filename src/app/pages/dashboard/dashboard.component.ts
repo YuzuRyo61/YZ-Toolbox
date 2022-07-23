@@ -32,4 +32,7 @@ export class DashboardComponent implements OnInit {
     }, 1000);
   }
 
+  mathFloor(num: number): number {
+    return Math.floor(num);
+  }
 }
